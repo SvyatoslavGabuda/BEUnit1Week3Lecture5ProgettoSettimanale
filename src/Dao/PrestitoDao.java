@@ -77,7 +77,6 @@ public class PrestitoDao {
     	trovautente.setParameter("nTessera",nTessera);
     	try {
     		Utente trovato = (Utente) trovautente.getSingleResult();
-    		
     		Query q = em.createQuery("SELECT p FROM Prestito p WHERE p.utente = :utenteTrovato");
     		q.setParameter("utenteTrovato", trovato);
     		return q.getResultList();
